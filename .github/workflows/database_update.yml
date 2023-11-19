@@ -8,5 +8,6 @@ jobs:
   connect-remote:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: Show tables
-        run: sqlcmd -S ${{ secrets.AZURE_SERVER }} -d channels-database -U ${{ secrets.AZURE_USERNAME }} -P ${{ secrets.AZURE_PASSWORD }} -i 'show_tables.sql'
+        run: sqlcmd -S ${{ secrets.AZURE_SERVER }} -d channels-database -U ${{ secrets.AZURE_USERNAME }} -P ${{ secrets.AZURE_PASSWORD }} -i show_tables.sql
