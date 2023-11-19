@@ -1,0 +1,13 @@
+name: database_update
+run-name: Setting up channels-database
+on:
+    push:
+      branches:
+        - main
+jobs:
+    connect-remote:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Show databases
+                run: PGPASSWORD=${{ secrets.ELEPHANT_PASSWORD }} psql -h ${{ secrets.ELEPHANT_HOSTNAME }} -p 5432 -d tepudsxx -U ${{ secrets.ELEPHANT_USERNAME }}
