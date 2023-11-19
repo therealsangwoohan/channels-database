@@ -8,5 +8,5 @@ jobs:
   connect-remote:
     runs-on: ubuntu-latest
     steps:
-      - name: Show databases
-        run: PGPASSWORD=${{ secrets.ELEPHANT_PASSWORD }} psql -h ${{ secrets.ELEPHANT_HOSTNAME }} -p 5432 -d tepudsxx -U ${{ secrets.ELEPHANT_USERNAME }}
+      - name: Show tables
+        run: PGPASSWORD=${{ secrets.ELEPHANT_PASSWORD }} psql -h ${{ secrets.ELEPHANT_HOSTNAME }} -p 5432 -d tepudsxx -U ${{ secrets.ELEPHANT_USERNAME }} -c "\dt"
