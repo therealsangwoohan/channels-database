@@ -10,4 +10,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Show tables
-        run: PGPASSWORD=${{ secrets.ELEPHANT_PASSWORD }} psql -h ${{ secrets.ELEPHANT_HOSTNAME }} -p 5432 -d tepudsxx -U ${{ secrets.ELEPHANT_USERNAME }} -f create_tables.sql
+        run: PGPASSWORD=${{ secrets.ELEPHANT_PASSWORD }} psql -h ${{ secrets.ELEPHANT_HOSTNAME }} -p 5432 -d tepudsxx -U ${{ secrets.ELEPHANT_USERNAME }} -f update.sql
